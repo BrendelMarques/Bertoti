@@ -4,6 +4,11 @@ A Engenharia de Software visa o desenvolvimento do projeto de acordo com os requ
 que atenda as necessidades do cliente e que pode variar conforme o andamento do projeto. O Engenheiro de Software precisa estar preparado para adaptar 
 seu projeto caso isso ocorra.
 
+3 pontos importantes na engenharia de software:
+Tempo: Durabilidade do programa e da estrutura do código.
+Escala: O software não pode perder sua eficiência independente da quantidade de usuários que estão acessando ao mesmo tempo. 
+Trade-off: Negociar requisitos visando a melhor opção, seja de linguagem de programação, SGBD ou IDE.
+
 ### Questões:
 #### 1. O que é Engenharia de Software e qual a relação com programação?
   R. A programação é o que desenvolve um software, porém a Engenharia de Software visa a atuação desse software ao longo do tempo, ou seja, além do desenvolvimento, também visa a modificação e manuntenção desse software. A programação é apenas uma parte da Engenharia de Software. 
