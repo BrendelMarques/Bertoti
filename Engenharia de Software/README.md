@@ -26,4 +26,13 @@ R. Requisitos não funcionais é o que tem "por trás" do software, por exemplo 
 
 R. Trocar uma linguagem de alto nível para uma de baixo nível em prol da eficiência do programa; 
 
+
+O que mais pode deteriorar o código de um software ao longo do tempo?
+- Uma arquitetura mal projetada.
+
+Como posso organizar a arquitetura de um software?
+- Usando diagrama de classes UML (Unfield Modeling Language)
+
+
+
   
