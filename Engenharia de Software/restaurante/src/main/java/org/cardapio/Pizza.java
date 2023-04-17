@@ -1,13 +1,11 @@
 package org.cardapio;
 
-import java.util.List;
-
 public class Pizza {
 
     private String nome;
-    private List<Ingrediente> ingrediente;
+    private String ingrediente;
 
-    public Pizza(String nome, List<Ingrediente> ingrediente) {
+    public Pizza(String nome, String ingrediente) {
         this.nome = nome;
         this.ingrediente = ingrediente;
     }
@@ -20,7 +18,7 @@ public class Pizza {
         this.nome = nome;
     }
 
-    public List<Ingrediente> getIngrediente(){
+    public String getIngrediente(){
         return ingrediente;
     }
 }

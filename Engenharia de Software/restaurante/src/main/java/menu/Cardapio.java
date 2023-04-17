@@ -1,7 +1,7 @@
 package menu;
 
 import org.cardapio.Hamburguer;
-import org.cardapio.Pizza;
+import org.cardapio.Pizza; 
 import org.cardapio.Porcao;
 
 import java.util.LinkedList;
@@ -33,10 +33,28 @@ public class Cardapio {
         return encontrados;
     }
 
+    public List<Hamburguer> buscarHamburguerPorIngrediente(String ingrediente){
+        List<Hamburguer> encontrados = new LinkedList<Hamburguer>();
+        for (Hamburguer hamburguer:hamburguers){
+            if (hamburguer.getIngrediente().equals(ingrediente)) 
+                encontrados.add(hamburguer);
+        }
+        return encontrados;
+    }
+
     public List<Pizza> buscarPizzaPorNome(String nome){
         List<Pizza> encontrados = new LinkedList<Pizza>();
         for (Pizza pizza:pizzas){
             if (pizza.getNome(). equals(nome))
+                encontrados.add(pizza);
+        }
+        return encontrados;
+    }
+
+    public List<Pizza> buscarPizzaPorIngrediente(String ingrediente){
+        List<Pizza> encontrados = new LinkedList<Pizza>();
+        for (Pizza pizza:pizzas){
+            if (pizza.getIngrediente().equals(ingrediente)) 
                 encontrados.add(pizza);
         }
         return encontrados;
