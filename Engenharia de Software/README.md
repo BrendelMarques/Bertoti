@@ -24,7 +24,7 @@ R. Requisitos não funcionais é o que tem "por trás" do software, por exemplo 
 
 2.3. Dê 2 exemplos de trade-offs em requisitos não funcionais.
 
-R. Trocar uma linguagem de alto nível para uma de baixo nível em prol da eficiência do programa; 
+R. Trocar uma linguagem de alto nível para uma de baixo nível em prol da eficiência do programa; Utilizar linguagem de alto nível visando melhor adequação da equipe de desenvolvimento. 
 
 
 O que mais pode deteriorar o código de um software ao longo do tempo?
