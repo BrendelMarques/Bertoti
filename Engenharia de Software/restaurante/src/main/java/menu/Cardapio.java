@@ -68,4 +68,13 @@ public class Cardapio {
         }
         return encontrados;
     }
+
+    public List<Porcao> buscarPorcaoPorIngrediente(String ingrediente){
+        List<Porcao> encontrados = new LinkedList<Porcao>();
+        for (Porcao porcao:porcoes){
+            if (porcao.getIngrediente().equals(ingrediente)) 
+                encontrados.add(porcao);
+        }
+        return encontrados;
+    }
 }

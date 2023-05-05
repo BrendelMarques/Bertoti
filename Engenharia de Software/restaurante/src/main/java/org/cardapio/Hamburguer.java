@@ -21,4 +21,8 @@ public class Hamburguer {
     public String getIngrediente(){
         return ingrediente;
     }
+    
+    public void setIngrediente(String ingrediente){
+        this.ingrediente = ingrediente;
+    }
 }
