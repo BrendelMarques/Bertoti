@@ -12,19 +12,20 @@ public class teste {
         menu.addHamburguer(new Hamburguer("Cheese Bacon","Pão, hamburguer 120g , bacon, queijo"));
         menu.addHamburguer(new Hamburguer("Bauru", "Presunto, queijo e tomate"));
 
-        menu.addPizza(new Pizza("Calabresa", "Calabresa"));
-        menu.addPizza(new Pizza("Toscana", "Calabresa com queijo"));
+        menu.addPizza(new Pizza("Calabresa", "Calabresa e cebola"));
+        menu.addPizza(new Pizza("Toscana", "Calabresa e queijo"));
         menu.addPizza(new Pizza("Portuguesa", "Presunto, queijo, ovo, ervilha e cebola"));
 
         menu.addPorcao(new Porcao("Torresmo", "Torresmo"));
 
+        System.out.println("Teste Hamburguer:");
+        System.out.println("");
 
-      
         List<Hamburguer> hamburguersEncontrados = menu.buscarHamburguerPorNome("Cheese Bacon");
         for (Hamburguer hamburguer: hamburguersEncontrados){System.out.println(hamburguer.getIngrediente());
         }
      
-        List<Hamburguer> hamburguersEncontrados2 = menu.buscarHamburguerPorIngrediente("Pão, hamburguer 120g , bacon, queijo");
+        List<Hamburguer> hamburguersEncontrados2 = menu.buscarHamburguerPorIngrediente("bacon");
         for (Hamburguer hamburguer: hamburguersEncontrados2){System.out.println(hamburguer.getNome());
         }
 
@@ -32,17 +33,25 @@ public class teste {
         for (Hamburguer hamburguer: hamburguersEncontrados3){System.out.println(("Ingredientes: " + hamburguer.getIngrediente()));
         }
 
+        System.out.println("");
+        System.out.println("Teste Pizza:");
+        System.out.println("");
+
         List<Pizza> pizzasEncontradas = menu.buscarPizzaPorNome("Calabresa");
         for (Pizza pizza: pizzasEncontradas){System.out.println(pizza.getNome());
         }
 
-        List<Pizza> pizzasEncontradas2 = menu.buscarPizzaPorIngrediente("Calabresa com queijo");
+        List<Pizza> pizzasEncontradas2 = menu.buscarPizzaPorIngrediente("Calabresa");
         for (Pizza pizza: pizzasEncontradas2){System.out.println(pizza.getNome());
         }
 
         List<Pizza> pizzasEncontradas3 = menu.buscarPizzaPorNome("Portuguesa");
         for (Pizza pizza: pizzasEncontradas3){System.out.println("Ingredientes: " + (pizza.getIngrediente()));
         }
+
+        System.out.println("");
+        System.out.println("Teste Porção:");
+        System.out.println("");
 
         List<Porcao> porcoesEncontradas = menu.buscarPorcaoPorNome("Torresmo");
         for (Porcao porcao: porcoesEncontradas){System.out.println(porcao.getNome());

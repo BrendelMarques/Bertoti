@@ -36,7 +36,7 @@ public class Cardapio {
     public List<Hamburguer> buscarHamburguerPorIngrediente(String ingrediente){
         List<Hamburguer> encontrados = new LinkedList<Hamburguer>();
         for (Hamburguer hamburguer:hamburguers){
-            if (hamburguer.getIngrediente().equals(ingrediente)) 
+            if (hamburguer.getIngrediente().contains(ingrediente)) 
                 encontrados.add(hamburguer);
         }
         return encontrados;
@@ -54,7 +54,7 @@ public class Cardapio {
     public List<Pizza> buscarPizzaPorIngrediente(String ingrediente){
         List<Pizza> encontrados = new LinkedList<Pizza>();
         for (Pizza pizza:pizzas){
-            if (pizza.getIngrediente().equals(ingrediente)) 
+            if (pizza.getIngrediente().contains(ingrediente)) 
                 encontrados.add(pizza);
         }
         return encontrados;
@@ -72,7 +72,7 @@ public class Cardapio {
     public List<Porcao> buscarPorcaoPorIngrediente(String ingrediente){
         List<Porcao> encontrados = new LinkedList<Porcao>();
         for (Porcao porcao:porcoes){
-            if (porcao.getIngrediente().equals(ingrediente)) 
+            if (porcao.getIngrediente().contains(ingrediente)) 
                 encontrados.add(porcao);
         }
         return encontrados;
