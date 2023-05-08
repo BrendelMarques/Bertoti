@@ -17,6 +17,7 @@ public class teste {
         menu.addPizza(new Pizza("Portuguesa", "Presunto, queijo, ovo, ervilha e cebola"));
 
         menu.addPorcao(new Porcao("Torresmo", "Torresmo"));
+        menu.addPorcao(new Porcao("Mista","Fritas com bacon e queijo e calabresa com cebola"));
 
         System.out.println("Teste Hamburguer:");
         System.out.println("");
@@ -57,5 +58,8 @@ public class teste {
         for (Porcao porcao: porcoesEncontradas){System.out.println(porcao.getNome());
         }
         
+        List<Porcao> porcoesEncontradas2 = menu.buscarPorcaoPorIngrediente("bacon");
+        for (Porcao porcao: porcoesEncontradas2){System.out.println(porcao.getNome());
+        }
     }   
 }
