@@ -19,8 +19,7 @@ public class teste {
         menu.addPorcao(new Porcao("Torresmo", "Torresmo"));
         menu.addPorcao(new Porcao("Mista","Fritas com bacon e queijo e calabresa com cebola"));
 
-        System.out.println("Teste Hamburguer:");
-        System.out.println("");
+        System.out.println("- Teste Hamburguer:");
 
         List<Hamburguer> hamburguersEncontrados = menu.buscarHamburguerPorNome("Cheese Bacon");
         for (Hamburguer hamburguer: hamburguersEncontrados){System.out.println(hamburguer.getIngrediente());
@@ -35,8 +34,7 @@ public class teste {
         }
 
         System.out.println("");
-        System.out.println("Teste Pizza:");
-        System.out.println("");
+        System.out.println("- Teste Pizza:");
 
         List<Pizza> pizzasEncontradas = menu.buscarPizzaPorNome("Calabresa");
         for (Pizza pizza: pizzasEncontradas){System.out.println(pizza.getNome());
@@ -51,8 +49,7 @@ public class teste {
         }
 
         System.out.println("");
-        System.out.println("Teste Porção:");
-        System.out.println("");
+        System.out.println("- Teste Porção:");
 
         List<Porcao> porcoesEncontradas = menu.buscarPorcaoPorNome("Torresmo");
         for (Porcao porcao: porcoesEncontradas){System.out.println(porcao.getNome());
