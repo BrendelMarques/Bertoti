@@ -35,42 +35,39 @@ class RestApiDemoController {
 	}
 
 	@GetMapping("/{id}")
-	Optional<Beer> getBeerById(@PathVariable String id) {
-		for (Beer c: beers) {
-			if (c.getId().equals(id)) {
-				return Optional.of(c);
-			}
-		}
-
-		return Optional.empty();
+	ResponseEntity<Beer> getBeerById(@PathVariable String id) {
+		Optional<Beer> beer = beers.stream()
+				.filter(b -> b.getId().equals(id))
+				.findFirst();
+		return beer.map(ResponseEntity::ok)
+				.orElse(ResponseEntity.notFound().build());
 	}
 
 	@PostMapping
-	Beer postBeer(@RequestBody Beer beer) {
+	ResponseEntity<Beer> postBeer(@RequestBody Beer beer) {
 		beers.add(beer);
-		return beer;
+		return ResponseEntity.status(HttpStatus.CREATED).body(beer);
 	}
 
 	@PutMapping("/{id}")
-	ResponseEntity<Beer> putBeer(@PathVariable String id,
-									@RequestBody Beer beer) {
-		int BeerIndex = -1;
-
-		for (Beer c: beers) {
-			if (c.getId().equals(id)) {
-				beerIndex = beers.indexOf(c);
-				beers.set(beerIndex, beer);
-			}
+	ResponseEntity<Beer> putBeer(@PathVariable String id, @RequestBody Beer beer) {
+		Optional<Beer> existingBeer = beers.stream()
+				.filter(b -> b.getId().equals(id))
+				.findFirst();
+		if (existingBeer.isPresent()) {
+			int index = beers.indexOf(existingBeer.get());
+			beers.set(index, beer);
+			return ResponseEntity.ok(beer);
+		} else {
+			beers.add(beer);
+			return ResponseEntity.status(HttpStatus.CREATED).body(beer);
 		}
-
-		return (beerIndex == -1) ?
-				new ResponseEntity<>(postBeer(beer), HttpStatus.CREATED):
-				new ResponseEntity<>(beer, HttpStatus.OK);
 	}
 
 	@DeleteMapping("/{id}")
-	void deleteBeer(@PathVariable String id) {
-		beers.removeIf(c -> c.getId().equals(id));
+	ResponseEntity<Void> deleteBeer(@PathVariable String id) {
+		boolean removed = beers.removeIf(b -> b.getId().equals(id));
+		return removed ? ResponseEntity.noContent().build() : ResponseEntity.notFound().build();
 	}
 }
 
@@ -99,3 +96,4 @@ class Beer {
 		this.name = name;
 	}
 }
+
